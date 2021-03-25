@@ -1,0 +1,50 @@
+@import '../../abstracts/abstracts';
+
+
+.main {
+    background-color: $VeryLightGray;
+   
+}
+
+.nav {
+    padding-top: 1.5rem;
+
+    @include media-down('large'){
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+}
+
+
+.searchBar {
+    
+    padding: 1rem 2.125rem;
+    color: $DarkGray;
+    background-color: $White;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px #8585854d;
+
+    @include media-up('large'){
+        height: 3.75rem;
+        width: 30rem;
+    }
+
+    i {
+        padding-right: 1.75rem;
+        
+    }
+
+    input {
+        border: none;
+        width: 80%;
+
+        &::placeholder {
+            color: $DarkGray;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

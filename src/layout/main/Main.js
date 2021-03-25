@@ -1,10 +1,16 @@
 import React from 'react'
-
+import './_main.scss';
 
 const Main = () => {
     return (
-        <main>
-            <h1>this is from main</h1>
+        <main className="main">
+            <nav className="nav container">
+                <form className="searchBar">
+                    <i><ion-icon name="search-outline"></ion-icon></i>
+                    <input type="text" placeholder="Search for a country..." />
+                </form>
+            </nav>
+            
         </main>
     )
 }
