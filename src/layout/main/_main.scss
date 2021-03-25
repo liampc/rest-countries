@@ -8,10 +8,26 @@
 
 .nav {
     padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
 
     @include media-down('large'){
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+
+    @include media-up('large'){
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div:first-of-type {
+       margin-bottom: 2.5rem;
+    }
+
+    div:last-of-type {
+        margin-bottom: 0.625rem;
     }
 
 }
@@ -25,7 +41,7 @@
     border-radius: 5px;
     box-shadow: 0px 0px 20px 0px #8585854d;
 
-    @include media-up('large'){
+    @include media-up('medium'){
         height: 3.75rem;
         width: 30rem;
     }
@@ -47,4 +63,12 @@
             outline: none;
         }
     }
+}
+
+
+.select {
+    width: 12.5rem;
+    padding: 1.25rem 1.5rem;
+    border: none;
+    box-shadow: 0px 0px 20px 0px #8585854d;
 }
