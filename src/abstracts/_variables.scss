@@ -8,10 +8,11 @@ $VeryLightGray: hsl(0, 0%, 98%);
 $White: hsl(0, 0%, 100%);
 
 
-$font-s: 14px;
-$font-reg: 16px;
+$fontS-xs: 0.75rem; //12px; 
+$fontS-s: 0.875rem; //14px;
+$fontS-r: 1rem; //16px;
+$fontS-m: 1.25rem; //20px
 $font: 'Nunito Sans', sans-serif;
-$font-l: 300;
-$font-sb: 600;
-$font-b: 800;
-
+$fontW-l: 300;
+$fontW-sb: 600;
+$fontW-b: 800;

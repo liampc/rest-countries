@@ -18,3 +18,22 @@ body {
    
 }
 
+.container {
+    margin: 0 auto;
+    max-width: 80rem;
+
+    &-padding-lr {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+

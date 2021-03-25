@@ -1,0 +1,46 @@
+@import '../../abstracts/abstracts';
+
+.header {
+
+    background-color: $White;
+    padding: 2.125rem 1rem;
+    font-size: $fontS-xs;
+    font-weight: $fontW-sb;
+    box-shadow: 0px 0px 6px 1px #80808052;
+   
+
+    &__banner {
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+       
+        @include media-up('large'){
+            font-size: $fontS-m;
+        }
+
+    }
+    
+    &__logo {
+        font-size: $fontS-xs;
+
+        @include media-up('large'){
+            font-size: $fontS-m;
+            
+        }
+    }
+
+    &__switch {
+        
+
+        i {
+            padding-right: 0.75rem;
+            transform: translateY(1px);
+        }
+
+        &:hover {
+            color: $DarkGray;
+        }
+        
+    }
+}
