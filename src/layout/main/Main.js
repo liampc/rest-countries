@@ -10,6 +10,7 @@ const Main = () => {
 
     useEffect(() => {
         fetchCountries();
+
     }, [region])
 
     const fetchCountries = async (area) => {
@@ -17,13 +18,13 @@ const Main = () => {
         const data = await fetch(`https://restcountries.eu/rest/v2/region/${area}`)
         const countries =  await data.json()
         setAllCountries(countries)
-        
+  
     }
 
   
     const selectRegion = () => {
        
-        console.log('this is a function')
+       
         let selections = document.querySelector('.select__selection')
         let arrow = document.querySelector('#arrow')
         if (selections.classList.contains('hide')){
@@ -38,8 +39,7 @@ const Main = () => {
     const changeRegion = (e) => {
         let newRegion = e.target.innerText
         setRegion(newRegion)
-        fetchCountries(newRegion)
-        console.log()
+        
     }
  
     return (
@@ -58,6 +58,7 @@ const Main = () => {
             <div className="list container">
                 {allCountries.map(country => {
                     return <Card 
+                                key={country.alpha2Code}
                                 name={country.name} 
                                 population={country.population}
                                 region={country.region}
