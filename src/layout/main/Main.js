@@ -12,13 +12,22 @@ const Main = () => {
                     </form>
                 </div>
                 <div className="nav__select">
-                    <select className="select" name="region" id="region">
+                    {/* <select className="select" name="region" id="region">
                         <option className="select" value="africa">Africa</option>
                         <option value="america">America</option>
                         <option value="asia">Asia</option>
                         <option value="europe">Europe</option>
                         <option value="oceania">Oceania</option>
-                    </select>
+                    </select> */}
+                    <div className="select"> 
+                        <div className="select__title">Filter by region <i><ion-icon name="chevron-down-outline"></ion-icon></i></div>
+                        <div className="select__selection">
+                            <div className="selected">Africa</div>
+                            <div>America</div>
+                            <div>Asia</div>
+                        </div>
+                       
+                    </div>
                 </div>
                 
             </nav>
