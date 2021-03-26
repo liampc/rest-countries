@@ -14,7 +14,7 @@ const SearchBar = (props) => {
 const Select = (props) => {
     return (
         <div className="select"> 
-            <div className="select__title">Filter by region <i id="arrow" onClick={props.handleClick}><ion-icon name="chevron-down-outline"></ion-icon></i></div>
+            <div className="select__title" onClick={props.handleClick}>Filter by region <i id="arrow"><ion-icon name="chevron-down-outline"></ion-icon></i></div>
             <div className="select__selection hide">
                 <div onClick={(e) => props.changeRegion(e)} className="">Africa</div>
                 <div onClick={(e) => props.changeRegion(e)}>Americas</div>
