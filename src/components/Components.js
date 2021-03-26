@@ -2,11 +2,11 @@ import React from 'react'
 import './_components.scss'
 
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     return (
         <form className="searchBar">
             <i><ion-icon name="search-outline"></ion-icon></i>
-            <input type="text" placeholder="Search for a country..." />
+            <input type="text" onChange={props.handleChange} value={props.value} placeholder="Search for a country..." />
         </form>
     )
 }

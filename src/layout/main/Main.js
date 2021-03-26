@@ -7,11 +7,14 @@ const Main = () => {
 
     const [allCountries, setAllCountries] = useState([])
     const [region, setRegion] = useState('europe')
+    const [inputValue, setInputValue] = useState('')
+    const [searchResults, setSearchResults] = useState([])
+
 
     useEffect(() => {
         fetchCountries();
 
-    }, [region])
+    }, [allCountries,region, inputValue, searchResults])
 
     const fetchCountries = async (area) => {
         area = region
@@ -23,7 +26,6 @@ const Main = () => {
 
   
     const selectRegion = () => {
-       
        
         let selections = document.querySelector('.select__selection')
         let arrow = document.querySelector('#arrow')
@@ -39,14 +41,58 @@ const Main = () => {
     const changeRegion = (e) => {
         let newRegion = e.target.innerText
         setRegion(newRegion)
-        
+        selectRegion()
+    }
+
+    const searchCountry = async (e) => {
+        const value = e.target.value
+        setInputValue(value)
+        const data = await fetch(`https://restcountries.eu/rest/v2/name/${inputValue}`)
+        const countries = await data.json()
+        setSearchResults(countries)
     }
  
+    let display;
+    if (inputValue !== ""){
+        try {
+            display = searchResults.map(country => {
+                    return <Card 
+                                key={country.alpha2Code}
+                                name={country.name} 
+                                population={country.population}
+                                region={country.region}
+                                capital={country.capital}
+                                flag={country.flag}
+                            />
+                })
+        } catch {
+            display = "No results found"
+        }
+
+    } else if (inputValue === "") {
+        display = allCountries.map(country => {
+            return <Card 
+                        key={country.alpha2Code}
+                        name={country.name} 
+                        population={country.population}
+                        region={country.region}
+                        capital={country.capital}
+                        flag={country.flag}
+                    />
+        })
+    }
+       
+    
+
+
     return (
         <main className="main">
             <nav className="nav container">
                 <div className="nav__search">
-                    <SearchBar />
+                    <SearchBar 
+                        handleChange={searchCountry}
+                        value={inputValue}
+                    />
                 </div>
                 <div className="nav__select">
                     <Select 
@@ -56,17 +102,7 @@ const Main = () => {
                 </div>
             </nav>
             <div className="list container">
-                {allCountries.map(country => {
-                    return <Card 
-                                key={country.alpha2Code}
-                                name={country.name} 
-                                population={country.population}
-                                region={country.region}
-                                capital={country.capital}
-                                flag={country.flag}
-                            />
-                })}
-                
+                {display}
             </div>
         </main>
     )
