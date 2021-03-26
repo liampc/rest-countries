@@ -26,16 +26,16 @@ const Select = () => {
     )
 }
 
-const Card = () => {
+const Card = (props) => {
     return (
         <div className="card">
             {/* <div className="card__pic" style={{backgroundImage: `url(${flag})`}}></div> */}
-            <div className="card__pic"></div>
+            <div className="card__pic" style={{backgroundImage: `url(${props.flag})`}}></div>
             <div className="card__info container-padding-lr">
-                <h2>Germany</h2>
-                <p>Population: <span>81,200,000</span></p>
-                <p>Region: <span>Europe</span></p>
-                <p>Capital: <span>Berlin</span></p>
+                <h2>{props.name}</h2>
+                <p>Population: <span>{props.population.toLocaleString()}</span></p>
+                <p>Region: <span>{props.region}</span></p>
+                <p>Capital: <span>{props.capital}</span></p>
             </div>
         </div>
     )

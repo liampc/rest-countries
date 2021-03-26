@@ -39,5 +39,10 @@
 
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding-bottom: 4rem;
+
+    @include media-up('medium'){
+        justify-content: space-between;
+    }
 }
