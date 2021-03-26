@@ -6,16 +6,18 @@ import {SearchBar, Select, Card} from '../../components/Components';
 const Main = () => {
 
     const [allCountries, setAllCountries] = useState([])
+    const [region, setRegion] = useState('europe')
 
     useEffect(() => {
         fetchCountries();
-    }, [])
+    }, [region])
 
-    const fetchCountries = async () => {
-        const data = await fetch('https://restcountries.eu/rest/v2/regionalbloc/eu')
+    const fetchCountries = async (area) => {
+        area = region
+        const data = await fetch(`https://restcountries.eu/rest/v2/region/${area}`)
         const countries =  await data.json()
         setAllCountries(countries)
-        console.log(countries)
+        
     }
 
   
@@ -33,6 +35,12 @@ const Main = () => {
         }
     }
 
+    const changeRegion = (e) => {
+        let newRegion = e.target.innerText
+        setRegion(newRegion)
+        fetchCountries(newRegion)
+        console.log()
+    }
  
     return (
         <main className="main">
@@ -43,6 +51,7 @@ const Main = () => {
                 <div className="nav__select">
                     <Select 
                         handleClick={selectRegion}
+                        changeRegion={changeRegion}
                     />
                 </div>
             </nav>

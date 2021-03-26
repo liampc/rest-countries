@@ -16,11 +16,11 @@ const Select = (props) => {
         <div className="select"> 
             <div className="select__title">Filter by region <i id="arrow" onClick={props.handleClick}><ion-icon name="chevron-down-outline"></ion-icon></i></div>
             <div className="select__selection hide">
-                <div className="">Africa</div>
-                <div>America</div>
-                <div>Asia</div>
-                <div>Europe</div>
-                <div>Oceania</div>
+                <div onClick={(e) => props.changeRegion(e)} className="">Africa</div>
+                <div onClick={(e) => props.changeRegion(e)}>Americas</div>
+                <div onClick={(e) => props.changeRegion(e)}>Asia</div>
+                <div onClick={(e) => props.changeRegion(e)}>Europe</div>
+                <div onClick={(e) => props.changeRegion(e)}>Oceania</div>
             </div>
         </div>
     )
