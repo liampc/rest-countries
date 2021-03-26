@@ -127,3 +127,47 @@
     }
 
 }
+
+
+.list {
+
+    display: flex;
+    justify-content: center;
+   
+}
+
+.card {
+    background-color: $White;
+    flex: 0 1 16.5rem;
+    
+    &__pic {
+        height: 10.125rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 5px;
+    }
+
+    &__info {
+        padding-top: 1.875rem;
+        padding-bottom: 3rem;
+        font-size: $fontS-s;
+
+        h2 {
+            font-size: $fontS-r;
+            padding-bottom: 1.5rem;
+        }
+
+        p {
+            font-weight: $fontW-sb;
+            line-height: 1;
+        }
+
+        span {
+            font-weight: $fontW-l;
+        }
+
+        p:not(:last-child) {
+            padding-bottom: 0.75rem;
+        }
+    }
+}
