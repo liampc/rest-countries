@@ -134,18 +134,21 @@
 
     display: flex;
     justify-content: center;
-   
+    padding-bottom: 4rem;
 }
 
 .card {
     background-color: $White;
     flex: 0 1 16.5rem;
+    border-radius: 8px;
+    
     
     &__pic {
         height: 10.125rem;
         background-size: cover;
         background-repeat: no-repeat;
-        border-radius: 5px;
+        border: 1px transparent;
+        border-radius: 5px 5px 0 0;
     }
 
     &__info {
