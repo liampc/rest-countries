@@ -11,12 +11,12 @@ const SearchBar = () => {
     )
 }
 
-const Select = () => {
+const Select = (props) => {
     return (
         <div className="select"> 
-            <div className="select__title">Filter by region <i><ion-icon name="chevron-down-outline"></ion-icon></i></div>
-            <div className="select__selection">
-                <div className="selected">Africa</div>
+            <div className="select__title">Filter by region <i id="arrow" onClick={props.handleClick}><ion-icon name="chevron-down-outline"></ion-icon></i></div>
+            <div className="select__selection hide">
+                <div className="">Africa</div>
                 <div>America</div>
                 <div>Asia</div>
                 <div>Europe</div>

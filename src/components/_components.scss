@@ -56,6 +56,11 @@
         i {
             position: absolute;
             right: 1.25rem;
+            transition: 300ms ease-in-out;
+
+            &.open {
+                transform: rotate(-180deg);
+            }
         }
     }   
 
@@ -66,7 +71,7 @@
         border-radius: 5px;
         padding: 1.25rem 0;
         width: 12.5rem;
-        display: none;
+       
 
         div:nth-child(1) {
             border-radius: 5px;
@@ -76,7 +81,7 @@
             padding: 0.5rem 1.25rem;
         }
 
-        .selected {
+        .selected, div:hover {
             background-color: $VeryLightGray;
            
         }
@@ -91,9 +96,7 @@
     border-radius: 8px;
     margin-bottom: 2.5rem;
 
-    @include media-up('medium'){
-        
-    }
+   
     
     
     &__pic {

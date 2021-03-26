@@ -19,7 +19,21 @@ const Main = () => {
     }
 
   
+    const selectRegion = () => {
+       
+        console.log('this is a function')
+        let selections = document.querySelector('.select__selection')
+        let arrow = document.querySelector('#arrow')
+        if (selections.classList.contains('hide')){
+            selections.classList.remove('hide')
+            arrow.classList.add('open')
+        } else {
+            selections.classList.add('hide')
+            arrow.classList.remove('open')
+        }
+    }
 
+ 
     return (
         <main className="main">
             <nav className="nav container">
@@ -27,7 +41,9 @@ const Main = () => {
                     <SearchBar />
                 </div>
                 <div className="nav__select">
-                    <Select />
+                    <Select 
+                        handleClick={selectRegion}
+                    />
                 </div>
             </nav>
             <div className="list container">
