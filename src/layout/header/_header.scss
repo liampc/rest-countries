@@ -31,7 +31,8 @@
     }
 
     &__switch {
-        
+        padding: 0 15px;
+        transition: 200ms ease-in-out;
 
         i {
             padding-right: 0.75rem;
@@ -39,7 +40,10 @@
         }
 
         &:hover {
-            color: $DarkGray;
+            
+            border-radius: 5px;
+            background-color: black;
+            color: $White;
         }
         
     }
