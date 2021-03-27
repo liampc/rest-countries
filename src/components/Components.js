@@ -4,7 +4,7 @@ import './_components.scss'
 
 const SearchBar = (props) => {
     return (
-        <form className="searchBar">
+        <form className="searchBar to-switch">
             <i><ion-icon name="search-outline"></ion-icon></i>
             <input type="text" onChange={props.handleChange} value={props.value} placeholder="Search for a country..." />
         </form>
@@ -14,8 +14,8 @@ const SearchBar = (props) => {
 const Select = (props) => {
     return (
         <div className="select"> 
-            <div className="select__title" onClick={props.handleClick}>Filter by region <i id="arrow"><ion-icon name="chevron-down-outline"></ion-icon></i></div>
-            <div className="select__selection hide">
+            <div className="select__title to-switch" onClick={props.handleClick}>Filter by region <i id="arrow"><ion-icon name="chevron-down-outline"></ion-icon></i></div>
+            <div className="select__selection hide to-switch">
                 <div onClick={(e) => props.changeRegion(e)} className="">Africa</div>
                 <div onClick={(e) => props.changeRegion(e)}>Americas</div>
                 <div onClick={(e) => props.changeRegion(e)}>Asia</div>
@@ -28,7 +28,7 @@ const Select = (props) => {
 
 const Card = (props) => {
     return (
-        <div className="card">
+        <div className="card to-switch">
             {/* <div className="card__pic" style={{backgroundImage: `url(${flag})`}}></div> */}
             <div className="card__pic" style={{backgroundImage: `url(${props.flag})`}}></div>
             <div className="card__info container-padding-lr">

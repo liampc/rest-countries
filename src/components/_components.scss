@@ -32,6 +32,25 @@
             outline: none;
         }
     }
+
+
+    &.dark {
+
+        color: $White;
+        background-color: $DarkBlue;
+        box-shadow: none;
+
+        input {
+            color: $White;
+            background-color: $DarkBlue;
+
+            &::placeholder {
+                color: $White;
+            }
+
+        }
+
+    }
 }
 
 
@@ -62,6 +81,11 @@
                 transform: rotate(-180deg);
             }
         }
+
+        &.dark {
+            background-color: $DarkBlue;
+            color: $White;
+        }
     }   
 
 
@@ -84,8 +108,27 @@
         .selected, div:hover {
             background-color: $VeryLightGray;
            
+           
+        }
+
+
+        &.dark {
+            background-color: $DarkBlue;
+            color: $White;
+
+            .selected, div:hover {
+                background-color: $VeryDarkBlue;
+            }
         }
     }
+
+
+    &.dark {
+
+        background-color: $DarkBlue;
+
+    }
+    
 
 }
 
@@ -96,8 +139,6 @@
     border-radius: 8px;
     margin-bottom: 2.5rem;
 
-   
-    
     
     &__pic {
         height: 10.125rem;
@@ -129,5 +170,10 @@
         p:not(:last-child) {
             padding-bottom: 0.75rem;
         }
+    }
+
+    &.dark {
+        background-color: $DarkBlue;
+        color: $White;
     }
 }

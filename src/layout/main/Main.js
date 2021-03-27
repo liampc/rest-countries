@@ -86,7 +86,7 @@ const Main = () => {
 
 
     return (
-        <main className="main">
+        <main className="main to-switch">
             <nav className="nav container">
                 <div className="nav__search">
                     <SearchBar 

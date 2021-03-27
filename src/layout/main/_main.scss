@@ -4,6 +4,10 @@
 .main {
     background-color: $VeryLightGray;
     min-height: 100vh;
+
+    &.dark {
+        background-color: $VeryDarkBlue;
+    }
 }
 
 .nav {
