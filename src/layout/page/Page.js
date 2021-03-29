@@ -30,7 +30,27 @@ const Page = ( {match} ) => {
                 <div className="detail">
                     <div className="detail__flag" style={{backgroundImage: `url(${image})`}}></div>
                     <div className="detail__info">
-                        
+                        <h2>Belgium</h2>
+                        <div>
+                            <p>Native Name: <span>Belgie</span></p>
+                            <p>Population: <span>11,319,511</span></p>
+                            <p>Region: <span>Europe</span></p>
+                            <p>Subregion: <span>Western Europe</span></p>
+                            <p>Capital: <span>Brussels</span></p>
+                        </div>
+                        <div>
+                            <p>Top Level Domain: <span>Belgie</span></p>
+                            <p>Currencies: <span>11,319,511</span></p>
+                            <p>Languages: <span>Dutch, French, German </span></p>
+                        </div>
+                        <div>
+                            <h3>Border Countries:</h3>
+                            <div className="detail__countries">
+                                <div>France</div>
+                                <div>Germany</div>
+                                <div>Netherlands</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -3,16 +3,12 @@
 
 .page {
 
-    background-color: $VeryLightGray;
-    height: 100vh;
-
-
     &__nav {
         padding: 2.5rem 1.75rem 4rem 1.75rem;
     }
 
     &__detail {
-
+        
     }
 }
 
@@ -40,20 +36,29 @@
 .detail {
     padding: 0 1.75rem;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: $fontS-xs;
+
 
     @include media-up('large'){
         flex-direction: row;
+        
     }
 
 
     &__flag {
+        
         width: 100%;
         height: 14.5rem;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
+        margin-bottom: 3.25rem;
+        margin-right: 7.75rem;
         
         @include media-up('large'){
+            flex: 1;
             height: 25rem;
         }
         
@@ -61,6 +66,57 @@
 
    
     &__info {
+       
 
+        @include media-up('large'){
+            flex: 1;
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            font-size: $fontS-m;
+        }
+        
+        & > div {
+            padding-bottom: 3.375rem;
+            font-weight: $fontW-sb;
+          
+        }
+
+        p {
+            line-height: 2;
+        }
+
+        span {
+            font-weight: $fontW-l;
+        }
     }
+
+    h3 {
+        font-size: $fontS-s;
+        font-weight: $fontW-sb;
+        padding-bottom: 1.375rem;
+    }
+
+    &__countries {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include media-up('large'){
+            justify-content: flex-start;
+        }
+
+        & > div {
+
+            background-color: $White;
+            padding: 0.625rem;
+            min-width: 6.25rem;
+            text-align: center;
+            font-weight: $fontW-l;
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px 0px #8585854d;
+        }
+    }
+    
 }
