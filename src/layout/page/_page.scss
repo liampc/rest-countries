@@ -38,6 +38,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     font-size: $fontS-xs;
 
 
@@ -66,7 +67,7 @@
 
    
     &__info {
-       
+       max-height: 20rem;
 
         @include media-up('large'){
             flex: 1;
@@ -97,6 +98,16 @@
         font-weight: $fontW-sb;
         padding-bottom: 1.375rem;
     }
+
+    &__group {
+       
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+
 
     &__countries {
         display: flex;
