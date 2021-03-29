@@ -1,5 +1,6 @@
 import React from 'react'
 import './_components.scss'
+import {Link} from 'react-router-dom'
 
 
 const SearchBar = (props) => {
@@ -32,7 +33,7 @@ const Card = (props) => {
             {/* <div className="card__pic" style={{backgroundImage: `url(${flag})`}}></div> */}
             <div className="card__pic" style={{backgroundImage: `url(${props.flag})`}}></div>
             <div className="card__info container-padding-lr">
-                <h2>{props.name}</h2>
+                <h2><Link to={`country/${props.name}`}>{props.name}</Link></h2>
                 <p>Population: <span>{props.population.toLocaleString()}</span></p>
                 <p>Region: <span>{props.region}</span></p>
                 <p>Capital: <span>{props.capital}</span></p>

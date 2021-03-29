@@ -2,6 +2,7 @@ import './App.scss';
 import React, {useState, useEffect} from 'react'
 import Header from './layout/header/Header'
 import Main from './layout/main/Main'
+import Page from './layout/page/Page'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
     <div className="App">
       <Header handleClick={switchToDark} />
       <Main />
+      <Page />
     </div>
   );
 }
