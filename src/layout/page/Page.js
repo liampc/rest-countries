@@ -25,20 +25,44 @@ const Page = ( {match} ) => {
         setLanguages(data[0].languages)
         let updated = ''
 
-        data[0].borders.forEach(el => {
-            updated += `${el};`
-        })
-    
-        setCodes(updated)
+        // if (!data[0].borders === []){
+
+        //     data[0].borders.forEach(el => {
+        //         updated += `${el};`
+        //     })
+
+        //     setCodes(updated)
       
-        const response2 = await fetch(`https://restcountries.eu/rest/v2/alpha?codes=${updated}`)
-        const data2 = await response2.json()
-        console.log(data2)
-        setBorders(data2)
+        //     const response2 = await fetch(`https://restcountries.eu/rest/v2/alpha?codes=${updated}`)
+        //     const data2 = await response2.json()
+        //     console.log(data2)
+        //     setBorders(data2)
+        // }
+        try {
+            data[0].borders.forEach(el => {
+                updated += `${el};`
+            })
+        
+            setCodes(updated)
+        
+            const response2 = await fetch(`https://restcountries.eu/rest/v2/alpha?codes=${updated}`)
+            const data2 = await response2.json()
+            console.log(data2)
+            setBorders(data2)
+        } catch {
+            setBorders([])
+        }
 
     }
 
-   
+    let display;
+    if (borders.length < 1){
+        display = ''
+    } else if (borders.length > 1) {
+        display = borders.map(item => {
+            return <div key={item.name} className="detail__card to-switch">{item.name}</div>
+        })
+    }
    
 
 
@@ -81,10 +105,7 @@ const Page = ( {match} ) => {
                         <div className="detail__border">
                             <h3>Border Countries:</h3>
                             <div className="detail__countries to-switch">
-                            
-                                {borders.map(item => {
-                                    return <div key={item.name} className="detail__card to-switch">{item.name}</div>
-                                })}
+                                    {display}
                             </div>
                         </div>
                     </div>
