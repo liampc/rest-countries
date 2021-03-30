@@ -175,10 +175,39 @@
         @include media-up('large'){
             margin-left: 7.5rem;
         }
+
+        h2 {
+            margin-bottom: 2rem;
+
+            @include media-up('large'){
+                margin-bottom: 2.375rem;
+            }
+        }
     }
 
     &__group {
 
+
+        @include media-up('large'){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        p {
+            font-weight: $fontW-sb;
+            line-height: 2;
+        }
+
+        span {
+            font-weight: $fontW-l;
+        }
+
+        & > div {
+            margin-bottom: 3.25rem;
+
+
+        }
     }
 
     &__border {
