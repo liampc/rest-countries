@@ -7,11 +7,11 @@ const Page = ( {match} ) => {
     const [country, setCountry] = useState([])
     const [currency, setCurrency] = useState('')
     const [languages, setLanguages] = useState([])
+    const [codes, setCodes] = useState('')
     const [borders, setBorders] = useState([])
 
     useEffect(() => {
         fetchCountry()
-        
     }, [])
 
 
@@ -22,10 +22,22 @@ const Page = ( {match} ) => {
         setCountry(data[0])
         setCurrency(data[0].currencies[0].name)
         setLanguages(data[0].languages)
-        setBorders(data[0].borders)
+        let updated = ''
+
+        data[0].borders.forEach(el => {
+            updated += `${el};`
+        })
+    
+        setCodes(updated)
+      
+        const response2 = await fetch(`https://restcountries.eu/rest/v2/alpha?codes=${updated}`)
+        const data2 = await response2.json()
+        console.log(data2)
+        setBorders(data2)
 
     }
 
+   
    
 
 
@@ -68,8 +80,9 @@ const Page = ( {match} ) => {
                         <div className="detail__border">
                             <h3>Border Countries:</h3>
                             <div className="detail__countries to-switch">
+                            
                                 {borders.map(item => {
-                                    return <div key={item} className="detail__card to-switch">{item}</div>
+                                    return <div key={item.name} className="detail__card to-switch">{item.name}</div>
                                 })}
                             </div>
                         </div>
