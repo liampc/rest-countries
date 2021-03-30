@@ -141,7 +141,7 @@
 
 .detail {
 
-    padding: 0 1.75rem;
+    padding: 0 1.75rem 3.75rem 1.75rem;
     
     @include media-up('large'){
         display: flex;
@@ -212,9 +212,46 @@
 
     &__border {
 
+        h3 {
+            font-size: $fontS-r;
+            font-weight: $fontW-sb;
+            padding-bottom: 1.375rem;
+        }
+
+        @include media-up('large'){
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            h3 {
+                padding-bottom: 0;
+                margin-right: 1rem;
+            }
+          
+        }
+
     }
 
     &__countries {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        & > div {
+
+            background-color: $White;
+            min-width: 6.25rem;
+            padding: 0.625rem;
+            font-weight: $fontW-l;
+            text-align: center;
+            border-radius: 3px;
+            box-shadow: 0px 0px 5px 0px #8585854d;
+        }
+
+        & > div:not(:last-of-type) {
+            
+            margin-right: 0.625rem;
+        }
 
     }
 
