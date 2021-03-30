@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './_page.scss'
-import image from '../../assets/germany.png'
+
 
 const Page = ( {match} ) => {
 
@@ -50,7 +50,7 @@ const Page = ( {match} ) => {
             </div>
             <div className="page__detail container">
                 <div className="detail">
-                    <div className="detail__flag" style={{backgroundImage: `url(${image})`}}></div>
+                    <div className="detail__flag" style={{backgroundImage: `url(${country.flag})`}}></div>
                     <div className="detail__info">
                         <h2>{country.name}</h2>
                         <div className="detail__group">
