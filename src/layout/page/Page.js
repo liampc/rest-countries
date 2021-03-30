@@ -27,9 +27,9 @@ const Page = ( {match} ) => {
 
 
     return (
-        <div className="page">
+        <div className="page to-switch">
             <div className="page__nav container">
-                 <div className="button">
+                 <div className="button to-switch">
                     <a href="#"><i><ion-icon name="arrow-back-outline"></ion-icon></i>Back</a>
                  </div>
             </div>
@@ -64,10 +64,10 @@ const Page = ( {match} ) => {
                         </div>
                         <div className="detail__border">
                             <h3>Border Countries:</h3>
-                            <div className="detail__countries">
-                                <div>France</div>
-                                <div>Germany</div>
-                                <div>Netherlands</div>
+                            <div className="detail__countries to-switch">
+                                <div className="detail__card to-switch">France</div>
+                                <div className="detail__card to-switch">Germany</div>
+                                <div className="detail__card to-switch">Netherlands</div>
                             </div>
                         </div>
                     </div>
