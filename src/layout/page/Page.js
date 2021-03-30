@@ -7,6 +7,7 @@ const Page = ( {match} ) => {
     const [country, setCountry] = useState([])
     const [currency, setCurrency] = useState('')
     const [languages, setLanguages] = useState([])
+    const [borders, setBorders] = useState([])
 
     useEffect(() => {
         fetchCountry()
@@ -21,6 +22,8 @@ const Page = ( {match} ) => {
         setCountry(data[0])
         setCurrency(data[0].currencies[0].name)
         setLanguages(data[0].languages)
+        setBorders(data[0].borders)
+
     }
 
    
@@ -53,9 +56,9 @@ const Page = ( {match} ) => {
                                     {languages.map((lang, index) => {
     
                                         if (index === languages.length - 1){
-                                            return <span> {lang.name}</span>
+                                            return <span key={lang.name}> {lang.name}</span>
                                         } else {
-                                            return <span> {lang.name}, </span>
+                                            return <span key={lang.name}> {lang.name}, </span>
                                         }
                                       
                                     })}
@@ -65,9 +68,9 @@ const Page = ( {match} ) => {
                         <div className="detail__border">
                             <h3>Border Countries:</h3>
                             <div className="detail__countries to-switch">
-                                <div className="detail__card to-switch">France</div>
-                                <div className="detail__card to-switch">Germany</div>
-                                <div className="detail__card to-switch">Netherlands</div>
+                                {borders.map(item => {
+                                    return <div key={item} className="detail__card to-switch">{item}</div>
+                                })}
                             </div>
                         </div>
                     </div>
