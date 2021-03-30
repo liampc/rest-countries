@@ -45,7 +45,7 @@ const Page = ( {match} ) => {
                                 <p>Languages: <span>Dutch, French, German </span></p>
                             </div>
                         </div>
-                        <div>
+                        <div className="detail__border">
                             <h3>Border Countries:</h3>
                             <div className="detail__countries">
                                 <div>France</div>
