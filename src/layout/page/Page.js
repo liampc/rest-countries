@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './_page.scss'
+import {Link} from 'react-router-dom';
 
 
 const Page = ( {match} ) => {
@@ -45,7 +46,7 @@ const Page = ( {match} ) => {
         <div className="page to-switch">
             <div className="page__nav container">
                  <div className="button to-switch">
-                    <a href="#"><i><ion-icon name="arrow-back-outline"></ion-icon></i>Back</a>
+                    <Link to={'/'}><i><ion-icon name="arrow-back-outline"></ion-icon></i>Back</Link>
                  </div>
             </div>
             <div className="page__detail container">

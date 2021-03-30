@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './_header.scss'
+import {Link} from 'react-router-dom'
 
 
 
@@ -30,7 +31,7 @@ const Header = () => {
     return (
         <header className="header to-switch">
             <div className="header__banner container">
-                <h1 className="header__logo">Where in the world?</h1>
+                <Link to={'/'}><h1 className="header__logo">Where in the world?</h1></Link>
                 <p className="header__switch to-switch" onClick={switchToDark}>
                     {/* <i><ion-icon name="moon-outline"></ion-icon></i> */}
                     <i></i>
