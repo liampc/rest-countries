@@ -6,12 +6,13 @@
     padding: 2.125rem 1rem;
     font-size: $fontS-xs;
     font-weight: $fontW-sb;
-    box-shadow: 0px 0px 6px 1px #80808052;
+    box-shadow: $box-shadow-light;
 
 
     &.dark {
         background-color: $DarkBlue;
         color: $White;
+        box-shadow: $box-shadow-dark;
     }
    
 

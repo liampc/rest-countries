@@ -33,7 +33,7 @@
     }
 
     &:hover {
-       box-shadow: 0px 0px 14px 0px #80808052;
+       box-shadow: $box-shadow-light;
     }
 
     a {
@@ -174,7 +174,7 @@
             font-weight: $fontW-l;
             text-align: center;
             border-radius: 3px;
-            box-shadow: 0px 0px 5px 0px #8585854d;
+            box-shadow: $box-shadow-light;
         
 
         &:not(:last-of-type) {
