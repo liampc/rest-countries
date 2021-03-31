@@ -86,11 +86,12 @@
 
         &.dark {
             background-color: $DarkBlue;
+            box-shadow: $box-shadow-dark;
             color: $White;
 
             &:hover {
                 background-color: #2b39458a;
-                box-shadow: $box-shadow-dark;
+                
             }
         }
     }   
