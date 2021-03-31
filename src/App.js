@@ -19,11 +19,11 @@ function App() {
       if (el.classList.contains('dark')){
         setDarkMode(false)
         el.classList.remove('dark')
-        mode.innerHTML = 'Light'
+        mode.innerHTML = 'Dark'
       } else {
         setDarkMode(true)
         el.classList.add('dark')
-        mode.innerHTML = 'Dark'
+        mode.innerHTML = 'Light'
 
       }
     })
@@ -36,7 +36,7 @@ function App() {
       <div className="App">
         <Header switchToDark={switchToDark} />
         <Route>
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" render={(props) => <Main {...props} darkMode={darkMode} /> }/>
           <Route path="/:id" render={(props) => <Page {...props} darkMode={darkMode} />} />
         </Route>
       </div>

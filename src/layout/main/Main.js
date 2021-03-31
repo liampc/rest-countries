@@ -3,16 +3,27 @@ import './_main.scss';
 import {SearchBar, Select, Card} from '../../components/Components';
 
 
-const Main = () => {
+const Main = (props) => {
 
     const [allCountries, setAllCountries] = useState([])
     const [region, setRegion] = useState('europe')
     const [inputValue, setInputValue] = useState('')
     const [searchResults, setSearchResults] = useState([])
-
+    
 
     useEffect(() => {
         fetchCountries();
+
+        let elems = document.querySelectorAll('.to-switch')
+        if (props.darkMode === true){
+            elems.forEach(el => {
+                el.classList.add('dark')
+            })
+        } else if (props.darkMode === false){
+            elems.forEach(el => {
+                el.classList.remove('dark')
+            })
+        }
 
     }, [allCountries,region, inputValue, searchResults])
 
