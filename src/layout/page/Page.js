@@ -62,7 +62,7 @@ const Page = ( props ) => {
         display = borders.map(item => {
             return <div key={item.name} className="detail__card to-switch dark">{item.name}</div>
         })
-    } else if (borders.length > 1 && props.darkMode === false) {
+    } else {
         display = borders.map(item => {
             return <div key={item.name} className="detail__card to-switch">{item.name}</div>
         })
