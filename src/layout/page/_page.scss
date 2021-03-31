@@ -146,7 +146,7 @@
         @include media-up('large'){
             display: flex;
             flex-direction: row;
-            align-items: center;
+            align-items: flex-start;
 
             h3 {
                 padding-bottom: 0;
@@ -180,6 +180,7 @@
         &:not(:last-of-type) {
             
             margin-right: 0.625rem;
+            margin-bottom: 0.625rem;
         }
 
 
