@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/rest-countries/static/css/main.72886dbe.chunk.css",
+    "main.js": "/rest-countries/static/js/main.ae57c79f.chunk.js",
+    "main.js.map": "/rest-countries/static/js/main.ae57c79f.chunk.js.map",
+    "runtime-main.js": "/rest-countries/static/js/runtime-main.6d89ba32.js",
+    "runtime-main.js.map": "/rest-countries/static/js/runtime-main.6d89ba32.js.map",
+    "static/js/2.cc66d95e.chunk.js": "/rest-countries/static/js/2.cc66d95e.chunk.js",
+    "static/js/2.cc66d95e.chunk.js.map": "/rest-countries/static/js/2.cc66d95e.chunk.js.map",
+    "index.html": "/rest-countries/index.html",
+    "static/css/main.72886dbe.chunk.css.map": "/rest-countries/static/css/main.72886dbe.chunk.css.map",
+    "static/js/2.cc66d95e.chunk.js.LICENSE.txt": "/rest-countries/static/js/2.cc66d95e.chunk.js.LICENSE.txt",
+    "static/media/_header.scss": "/rest-countries/static/media/moon-outline.1d93a65e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6d89ba32.js",
+    "static/js/2.cc66d95e.chunk.js",
+    "static/css/main.72886dbe.chunk.css",
+    "static/js/main.ae57c79f.chunk.js"
+  ]
+}
