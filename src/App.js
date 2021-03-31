@@ -1,6 +1,6 @@
 import './App.scss';
 import React, {useState, useEffect} from 'react'
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './layout/header/Header'
 import Main from './layout/main/Main'
 import Page from './layout/page/Page'
@@ -32,7 +32,7 @@ function App() {
 
 
   return (
-    <Router>
+    <Router basename='/'>
       <div className="App">
         <Header switchToDark={switchToDark} />
         <Route>
