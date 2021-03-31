@@ -3,41 +3,42 @@ import './_page.scss'
 import {Link} from 'react-router-dom';
 
 
-const Page = ( {match} ) => {
+const Page = ( props ) => {
 
     const [country, setCountry] = useState([])
     const [currency, setCurrency] = useState('')
     const [languages, setLanguages] = useState([])
     const [codes, setCodes] = useState('')
     const [borders, setBorders] = useState([])
+    
 
     useEffect(() => {
         fetchCountry()
+        console.log(props.darkMode)
+       
+
+        let elems = document.querySelectorAll('.to-switch')
+        if (props.darkMode === true){
+            elems.forEach(el => {
+                el.classList.add('dark')
+            })
+        } else if (props.darkMode === false){
+            elems.forEach(el => {
+                el.classList.remove('dark')
+            })
+        }
+
     }, [])
 
 
     const fetchCountry = async () => {
-        const response = await fetch(`https://restcountries.eu/rest/v2/name/${match.params.id}?fullText=true`)
+        const response = await fetch(`https://restcountries.eu/rest/v2/name/${props.match.params.id}?fullText=true`)
         const data = await response.json()
-        console.log(data[0])
         setCountry(data[0])
         setCurrency(data[0].currencies[0].name)
         setLanguages(data[0].languages)
         let updated = ''
 
-        // if (!data[0].borders === []){
-
-        //     data[0].borders.forEach(el => {
-        //         updated += `${el};`
-        //     })
-
-        //     setCodes(updated)
-      
-        //     const response2 = await fetch(`https://restcountries.eu/rest/v2/alpha?codes=${updated}`)
-        //     const data2 = await response2.json()
-        //     console.log(data2)
-        //     setBorders(data2)
-        // }
         try {
             data[0].borders.forEach(el => {
                 updated += `${el};`
@@ -47,7 +48,6 @@ const Page = ( {match} ) => {
         
             const response2 = await fetch(`https://restcountries.eu/rest/v2/alpha?codes=${updated}`)
             const data2 = await response2.json()
-            console.log(data2)
             setBorders(data2)
         } catch {
             setBorders([])

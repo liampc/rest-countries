@@ -7,25 +7,27 @@ import Page from './layout/page/Page'
 
 function App() {
 
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState()
 
     const switchToDark = () => {
 
-    setDarkMode(!darkMode)
-  
+
     let elems = document.querySelectorAll('.to-switch')
     let mode = document.querySelector('#mode')
+
     elems.forEach(el => {
-      if (darkMode == true){
-        el.classList.add('dark')
-        mode.innerHTML = 'Light'
-      }
-      else {
+      if (el.classList.contains('dark')){
+        setDarkMode(false)
         el.classList.remove('dark')
+        mode.innerHTML = 'Light'
+      } else {
+        setDarkMode(true)
+        el.classList.add('dark')
         mode.innerHTML = 'Dark'
+
       }
     })
-
+    
   }
 
 
@@ -35,7 +37,7 @@ function App() {
         <Header switchToDark={switchToDark} />
         <Route>
           <Route exact path="/" component={Main} />
-          <Route path="/:id" component={Page} />
+          <Route path="/:id" render={(props) => <Page {...props} darkMode={darkMode} />} />
         </Route>
       </div>
     </Router>
