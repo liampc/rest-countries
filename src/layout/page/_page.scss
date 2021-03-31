@@ -25,9 +25,15 @@
     width: 6.625rem;
     padding: 0.75rem 1.5rem;
     font-size: $fontS-xs;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
 
     @include media-up('large'){
         width: 8.5rem;
+    }
+
+    &:hover {
+       box-shadow: 0px 0px 14px 0px #80808052;
     }
 
     a {
@@ -38,12 +44,20 @@
         padding-right: 0.625rem;
     }
 
+
+
     &.dark {
         background-color: $DarkBlue;
+
+        &:hover {
+            background-color: #2b39458a;
+            box-shadow: none;
+        }
 
         a {
             color: $White
         }
+
         
     }
 }

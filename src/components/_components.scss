@@ -59,6 +59,8 @@
     
     border:none;
     border-radius: 20px;
+    cursor: pointer;
+
    
     &::after {
         position: absolute;
@@ -85,6 +87,11 @@
         &.dark {
             background-color: $DarkBlue;
             color: $White;
+
+            &:hover {
+                background-color: #2b39458a;
+                box-shadow: none;
+            }
         }
     }   
 
@@ -114,6 +121,7 @@
 
         &.dark {
             background-color: $DarkBlue;
+            box-shadow: 2px 2px 5px 0px $VeryDarkBlue;
             color: $White;
 
             .selected, div:hover {
@@ -126,7 +134,7 @@
     &.dark {
 
         background-color: $DarkBlue;
-
+    
     }
     
 
@@ -138,6 +146,12 @@
     flex: 0 1 16.5rem;
     border-radius: 8px;
     margin-bottom: 2.5rem;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 
     
     &__pic {
