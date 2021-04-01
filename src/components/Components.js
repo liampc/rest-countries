@@ -33,7 +33,7 @@ const Card = (props) => {
             <Link to={`${props.name}`}>
                 <div className="card__pic" style={{backgroundImage: `url(${props.flag})`}}></div>
                 <div className="card__info container-padding-lr">
-                    <h2><Link to={`${props.name}`}>{props.name}</Link></h2>
+                    <h2>{props.name}</h2>
                     <p>Population: <span>{props.population.toLocaleString()}</span></p>
                     <p>Region: <span>{props.region}</span></p>
                     <p>Capital: <span>{props.capital}</span></p>
