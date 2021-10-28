@@ -1,5 +1,5 @@
 import './App.scss';
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './layout/header/Header'
 import Main from './layout/main/Main'
@@ -36,8 +36,10 @@ function App() {
       <div className="App">
         <Header switchToDark={switchToDark} />
         <Route>
-          <Route exact path="/" render={(props) => <Main {...props} darkMode={darkMode} /> }/>
-          <Route path="/:id" render={(props) => <Page {...props} darkMode={darkMode} />} />
+          <Switch>
+            <Route exact path="/" render={(props) => <Main {...props} darkMode={darkMode} /> }/>
+            <Route path="/:id" render={(props) => <Page {...props} darkMode={darkMode} />} />
+          </Switch>
         </Route>
       </div>
     </Router>
