@@ -32,7 +32,8 @@ const Page = ( props ) => {
 
 
     const fetchCountry = async () => {
-        const response = await fetch(`https://restcountries.eu/rest/v2/name/${props.match.params.id}?fullText=true`)
+        // const response = await fetch(`https://restcountries.com/rest/v2/name/${props.match.params.id}?fullText=true`)
+        const response = await fetch(`https://restcountries.com/v2/name/${props.match.params.id}?fullText=true`)
         const data = await response.json()
         setCountry(data[0])
         setCurrency(data[0].currencies[0].name)
@@ -41,12 +42,12 @@ const Page = ( props ) => {
 
         try {
             data[0].borders.forEach(el => {
-                updated += `${el};`
+                updated += `${el},`
             })
         
             setCodes(updated)
-        
-            const response2 = await fetch(`https://restcountries.eu/rest/v2/alpha?codes=${updated}`)
+            console.log(updated)
+            const response2 = await fetch(`https://restcountries.com/v2/alpha?codes=${updated}`)
             const data2 = await response2.json()
             setBorders(data2)
         } catch {
@@ -109,7 +110,7 @@ const Page = ( props ) => {
                         <div className="detail__border">
                             <h3>Border Countries:</h3>
                             <div className="detail__countries to-switch">
-                                    {display}
+                                {display}
                             </div>
                         </div>
                     </div>

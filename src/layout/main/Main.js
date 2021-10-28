@@ -29,7 +29,7 @@ const Main = (props) => {
 
     const fetchCountries = async (area) => {
         area = region
-        const data = await fetch(`https://restcountries.eu/rest/v2/region/${area}`)
+        const data = await fetch(`https://restcountries.com/v2/region/${area}`)
         const countries =  await data.json()
         setAllCountries(countries)
   
@@ -58,7 +58,7 @@ const Main = (props) => {
     const searchCountry = async (e) => {
         const value = e.target.value
         setInputValue(value)
-        const data = await fetch(`https://restcountries.eu/rest/v2/name/${inputValue}`)
+        const data = await fetch(`https://restcountries.com/v2/name/${inputValue}`)
         const countries = await data.json()
         setSearchResults(countries)
     }
